@@ -19,3 +19,5 @@ spring:
 
     topic:
         name: javaguides
+    topic-json:
+        name: javaguides_json

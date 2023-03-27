@@ -10,6 +10,8 @@ import org.springframework.kafka.config.TopicBuilder;
 public class KafkaTopicConfig {
     @Value("${spring.kafka.topic.name}")
     private String topicName;
+    @Value("${spring.kafka.topic-json.name}")
+    private String topicJsonName;
 
     @Bean
     public NewTopic firstTopic() {
@@ -21,7 +23,7 @@ public class KafkaTopicConfig {
     @Bean
     public NewTopic secondTopic() {
         return TopicBuilder
-                .name("javaguides_json")
+                .name(topicJsonName)
                 .build();
     }
 }
